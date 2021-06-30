@@ -86,6 +86,17 @@ function init_sidebar_section() {
             }
             location.hash = menu[i - 1]
         });
+        $(window).keydown(function(e) {
+          var hash = getHash().nav;
+          for (var i = 0; i < menu.length; i++) {
+            if (hash === '') break;
+            if (menu[i] === '#' + hash) break;
+          }
+          switch (e.keyCode) {
+            case 37: location.hash = menu[i - 1]; break;
+            case 39: location.hash = menu[i + 1]; break;
+          }
+        });
         $('#pagedown').on('click', function() {
             var hash = getHash().nav;
             for (var i = 0; i < menu.length; i++) {
