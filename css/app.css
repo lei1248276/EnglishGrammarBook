@@ -10,7 +10,7 @@ html { font-size: 100%; }
 
 /* Large screens (1024px) */
 @media (min-width: 64rem) {
-  html { font-size: 120%; }
+  html { font-size: 180%; }
 }
 
 /* Grid */
@@ -144,7 +144,7 @@ input.searchButton {
 
 @media (min-width: 40rem) {
 	#content {
-		width: 580px;
+		width: 75vw;
 		padding-left:330px;
 		margin-left: 0px;
 		margin-right: 0px;
@@ -192,7 +192,7 @@ input.searchButton {
     padding-top: 20px;
     padding-bottom: 0px;
 
-    font-size: 18px;
+    font-size: 26px;
     text-align: left;
 
     border-top: 2px solid #666;
@@ -288,8 +288,8 @@ input.searchButton {
   display: none;
   position: fixed;
 
-  height: 20px;
-  width: 70px;
+  height: 26px;
+  width: 150px;
   bottom: 10px;
   padding: 0 10px;
 
@@ -297,9 +297,9 @@ input.searchButton {
   margin-top: 0px;
 
   color: #FFF;
-  line-height: 20px;
+  line-height: 26px;
   text-align: center;
-  font-size: 10px;
+  font-size: 20px;
 
 
   border-radius: 5px;
@@ -368,21 +368,21 @@ input.searchButton {
 
 #flip{
 	position:fixed;
-	height:20px;
+	height:26px;
 	width:100%;
 	bottom:10px;
-	font-size:10px;
+	font-size:20px;
 	text-align:center;
 }
 
 #pageup,#pagedown{
-	height:20px;
+	height:26px;
 	width:70px;
 	display:inline-block;
 	border-radius: 5px;
     background-color: #AAA;
 	text-align: center;
-	line-height:20px;
+	line-height:26px;
 	color: #FFF;
 }
 
