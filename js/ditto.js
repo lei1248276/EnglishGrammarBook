@@ -252,11 +252,20 @@ function create_page_anchors() {
       var ul_tag = $('<ol></ol>')
         .insertAfter('#content h1')
         .addClass('content-toc')
+        .attr('id', 'content-toc'),
+        ul_tag2 = $('<ol></ol>')
+        .insertAfter('#content h1')
+        .addClass('content-toc topic')
         .attr('id', 'content-toc');
+
       for (var j = 0; j < headers.length; j++) {
-        var li_tag = $('<li></li>').html('<a href="#' + location.hash.split('#')[1] + '#' + headers[j] + '">' + headers[j] + '</a>');
+        var li_tag = $('<li></li>').html('<a href="#' + location.hash.split('#')[1] + '#' + headers[j] + '">' + headers[j] + '</a>'),
+          li_tag2 = $('<li></li>').html('<a href="#' + location.hash.split('#')[1] + '#' + headers[j] + '">' + headers[j] + '</a>');
+
         ul_tag.append(li_tag);
+        ul_tag2.append(li_tag2);
         li_create_linkage(li_tag, i);
+        li_create_linkage(li_tag2, i);
       }
     }
   }

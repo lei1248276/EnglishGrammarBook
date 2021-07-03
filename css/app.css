@@ -144,7 +144,7 @@ input.searchButton {
 
 @media (min-width: 40rem) {
 	#content {
-		width: 75vw;
+		width: 50vw;
 		padding-left:330px;
 		margin-left: 0px;
 		margin-right: 0px;
@@ -275,6 +275,12 @@ input.searchButton {
 #content .content-toc{
     background: #bdc3c7;
     border-radius: 5px;
+}
+#content .topic{
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #content table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}
