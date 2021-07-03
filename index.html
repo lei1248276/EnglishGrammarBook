@@ -30,6 +30,14 @@
   <script src="config.js"></script>
   <script>
     ditto.run();
+    window.addEventListener('load', function (e) {
+      if (confirm('是否打开上次观看？')) {
+        window.location.replace(localStorage.getItem('url'));
+      }
+    })
+    window.addEventListener('beforeunload', function (e) {
+      localStorage.setItem('url', location.href);
+    })
   </script>
   <noscript>
     <p>《旋元佑进阶文法》设定的目标就是「征服英文句子写作」。本书将带领读者，逐步打通英文句子写作的所有环节。</p>
