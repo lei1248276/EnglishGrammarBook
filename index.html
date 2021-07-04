@@ -30,7 +30,7 @@
   <script src="config.js"></script>
   <script>
     ditto.run();
-    window.addEventListener('load', function () {
+    window.addEventListener('DOMContentLoaded', function () {
       const hash = localStorage.getItem('hash');
       hash && (location.hash = hash);
     })
