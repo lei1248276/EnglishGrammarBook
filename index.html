@@ -29,14 +29,16 @@
 
   <script src="config.js"></script>
   <script>
-    ditto.run();
-    window.addEventListener('DOMContentLoaded', function () {
+    $(window).on('DOMContentLoaded', function () {
       const hash = localStorage.getItem('hash');
-      hash && (location.hash = hash);
+      if (hash) {
+        location.hash = hash;
+      }
     })
-    window.addEventListener('beforeunload', function () {
+    $(window).on('beforeunload', function () {
       localStorage.setItem('hash', location.hash);
     })
+    ditto.run();
   </script>
   <noscript>
     <p>《旋元佑进阶文法》设定的目标就是「征服英文句子写作」。本书将带领读者，逐步打通英文句子写作的所有环节。</p>

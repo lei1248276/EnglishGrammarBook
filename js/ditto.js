@@ -145,6 +145,7 @@ function searchbar_listener(event) {
 function init_back_to_top_button() {
   $(ditto.back_to_top_id).show();
   $(ditto.back_to_top_id).on('click', goTop);
+
 }
 
 function goTop(e) {
@@ -232,6 +233,9 @@ function create_page_anchors() {
       $(this).addClass(replace_symbols(content));
       this.id = replace_symbols(content);
       $(this).hover(function () {
+        history.pushState(null, null, '#' + location.hash.split('#')[1] + '#' + replace_symbols(content));
+        // goSection(replace_symbols(content));
+
         $(this).html(content +
           ' <a href="#' + location.hash.split('#')[1] +
           '#' +
