@@ -13,6 +13,7 @@ var ditto = {
     back_to_top_button: true,
     save_progress: true, // 保存阅读进度
     search_bar: true,
+    first_load: true,
 
     // initialize function
     run: initialize
@@ -364,8 +365,14 @@ function router() {
       Prism.highlightElement(this);
     });
 
-    var perc = ditto.save_progress ? store.get('page-progress') || 0 : 0;
-
+    var perc
+    if (ditto.first_load) {
+      perc = ditto.save_progress ? store.get('scrollTop') || 0 : 0;
+      ditto.first_load = false;
+    } else {
+      perc = ditto.save_progress ? store.get('page-progress') || 0 : 0;
+    }
+    // console.log(perc);
     if (sectionId) {
       $('html, body').animate({
         scrollTop: ($('#' + decodeURI(sectionId)).offset().top)
@@ -423,6 +430,6 @@ function router() {
   }).always(function() {
     clearInterval(loading);
     $(ditto.loading_id).hide();
-    document.documentElement.scrollTop = +localStorage.getItem('scrollTop');
+    // document.documentElement.scrollTop = +localStorage.getItem('scrollTop');
   });
 }
