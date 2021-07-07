@@ -233,7 +233,7 @@ function create_page_anchors() {
       $(this).addClass(replace_symbols(content));
       this.id = replace_symbols(content);
       $(this).hover(function () {
-        history.pushState(null, null, '#' + location.hash.split('#')[1] + '#' + replace_symbols(content));
+        // history.pushState(null, null, '#' + location.hash.split('#')[1] + '#' + replace_symbols(content));
         // goSection(replace_symbols(content));
 
         $(this).html(content +
@@ -317,7 +317,7 @@ function show_loading() {
   return loading;
 }
 
-function router() { 
+function router() {
   var path = location.hash.replace(/#([^#]*)(#.*)?/, './$1');
 
   var hashArr = location.hash.split('#');
@@ -423,5 +423,6 @@ function router() {
   }).always(function() {
     clearInterval(loading);
     $(ditto.loading_id).hide();
+    document.documentElement.scrollTop = +localStorage.getItem('scrollTop');
   });
 }

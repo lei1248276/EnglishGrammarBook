@@ -36,8 +36,9 @@
       }
     })
     $(window).on('beforeunload', function () {
-      localStorage.setItem('hash', location.hash);
-    })
+      localStorage.setItem('hash', location.hash.split('#')[1]);
+      localStorage.setItem('scrollTop', document.documentElement.scrollTop)
+    });
     ditto.run();
   </script>
   <noscript>
