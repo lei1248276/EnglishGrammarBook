@@ -13,7 +13,6 @@ var ditto = {
     back_to_top_button: true,
     save_progress: true, // 保存阅读进度
     search_bar: true,
-    first_load: true,
 
     // initialize function
     run: initialize
@@ -234,7 +233,7 @@ function create_page_anchors() {
       $(this).addClass(replace_symbols(content));
       this.id = replace_symbols(content);
       $(this).hover(function () {
-        // history.pushState(null, null, '#' + location.hash.split('#')[1] + '#' + replace_symbols(content));
+        history.pushState(null, null, '#' + location.hash.split('#')[1] + '#' + replace_symbols(content));
         // goSection(replace_symbols(content));
 
         $(this).html(content +
@@ -327,11 +326,7 @@ function router() {
     sectionId = hashArr[2];
   }
 
-  if (ditto.first_load) {
-    store.set('menu-progress', store.get('hash'));
-    store.set('page-progress', store.get('scrollTop'));
-    ditto.first_load = false;
-  } else if (ditto.save_progress && store.get('menu-progress') !== location.hash) {
+  if (ditto.save_progress && store.get('menu-progress') !== location.hash) {
     store.set('menu-progress', location.hash);
     store.set('page-progress', 0);
   }
@@ -369,13 +364,7 @@ function router() {
       Prism.highlightElement(this);
     });
 
-    var perc
-    /*if (ditto.first_load) {
-      perc = ditto.save_progress ? store.get('scrollTop') || 0 : 0;
-      ditto.first_load = false;
-    } else {
-    }*/
-    perc = ditto.save_progress ? store.get('page-progress') || 0 : 0;
+    var perc = ditto.save_progress ? store.get('page-progress') || 0 : 0;
     // console.log(perc);
     if (sectionId) {
       $('html, body').animate({

@@ -36,9 +36,7 @@
       }
     })
     $(window).on('beforeunload', function () {
-      localStorage.setItem('hash', location.hash.split('#')[1]);
-      localStorage.setItem('scrollTop', localStorage.getItem('page-progress'))
-      ditto.first_load = true;
+      localStorage.setItem('hash', location.hash);
     });
     ditto.run();
   </script>
