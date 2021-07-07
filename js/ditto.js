@@ -327,7 +327,11 @@ function router() {
     sectionId = hashArr[2];
   }
 
-  if (ditto.save_progress && store.get('menu-progress') !== location.hash) {
+  if (ditto.first_load) {
+    store.set('menu-progress', store.get('hash'));
+    store.set('page-progress', store.get('scrollTop'));
+    ditto.first_load = false;
+  } else if (ditto.save_progress && store.get('menu-progress') !== location.hash) {
     store.set('menu-progress', location.hash);
     store.set('page-progress', 0);
   }
@@ -366,12 +370,12 @@ function router() {
     });
 
     var perc
-    if (ditto.first_load) {
+    /*if (ditto.first_load) {
       perc = ditto.save_progress ? store.get('scrollTop') || 0 : 0;
       ditto.first_load = false;
     } else {
-      perc = ditto.save_progress ? store.get('page-progress') || 0 : 0;
-    }
+    }*/
+    perc = ditto.save_progress ? store.get('page-progress') || 0 : 0;
     // console.log(perc);
     if (sectionId) {
       $('html, body').animate({
