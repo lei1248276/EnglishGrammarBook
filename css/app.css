@@ -144,11 +144,17 @@ input.searchButton {
 
 @media (min-width: 40rem) {
 	#content {
-		width: 50vw;
+		width: 61vw;
 		padding-left:330px;
 		margin-left: 0px;
 		margin-right: 0px;
 	}
+}
+
+@media screen and (max-width: 1440px) {
+  #content{
+    width: 55vw;
+  }
 }
 
 #content pre{
@@ -283,6 +289,7 @@ input.searchButton {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  box-sizing: border-box;
 }
 
 #content table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}
