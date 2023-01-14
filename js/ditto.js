@@ -12,7 +12,7 @@ var ditto = {
     edit_button: true,
     back_to_top_button: true,
     save_progress: true, // 保存阅读进度
-    search_bar: true,
+    search_bar: false,
 
     // initialize function
     run: initialize
@@ -75,9 +75,11 @@ function init_sidebar_section() {
         var menuOL = $(ditto.sidebar_id + ' ol');
         menuOL.attr('start', 0);
 
-        menuOL.find('li a').map(function() {
+        menuOL.find('li a').map(function(index, target) {
+            target.id = target.hash.substring(1)
             menu.push(this.href.slice(this.href.indexOf('#')));
         });
+
         $('#pageup').on('click', function() {
             var hash = getHash().nav;
             for (var i = 0; i < menu.length; i++) {

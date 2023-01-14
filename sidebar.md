@@ -1,10 +1,7 @@
 # [旋元佑进阶文法]()
 
-作者：[旋元佑](https://book.douban.com/search/%E6%97%8B%E5%85%83%E4%BD%91)
+[//]: # (授权：<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">署名-非商用许可证</a>)
 
-授权：<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">署名-非商用许可证</a>
-
-## 目录
 1. [前言](#README)
 1. [序: 我学英文的经验](#docs/preface)
 1. [引：广读学英语](#docs/guide)
@@ -35,7 +32,10 @@
 1. [第二十五章 副词子句减化](#docs/AdverbClausesReduced)
 1. [附录 台湾大陆术语比较](#docs/terminology)
 
-## 其他
-- [源码](https://github.com/codeyu/EnglishGrammarBook)
-- [修订历史](https://github.com/codeyu/EnglishGrammarBook/commits/master)
-- [反馈意见](https://github.com/codeyu/EnglishGrammarBook/issues)
+[//]: # (## 其他)
+
+[//]: # (- [源码]&#40;https://github.com/codeyu/EnglishGrammarBook&#41;)
+
+[//]: # (- [修订历史]&#40;https://github.com/codeyu/EnglishGrammarBook/commits/master&#41;)
+
+[//]: # (- [反馈意见]&#40;https://github.com/codeyu/EnglishGrammarBook/issues&#41;)

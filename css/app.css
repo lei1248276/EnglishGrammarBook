@@ -44,7 +44,7 @@ body {
     position: fixed;
     height: 100%;
     margin-right: 20px;
-	padding-bottom:0px;
+	  padding-bottom:0px;
     padding-top: 0px;
     overflow-y: scroll;
     overflow: -moz-scrollbars-vertical;
@@ -53,7 +53,6 @@ body {
 
 #sidebar h1 {
     font-size: 25px;
-    margin-bottom: 0px;
     padding-bottom: 0px;
 }
 
@@ -70,8 +69,13 @@ body {
     margin-bottom: 0;
 }
 
-#sidebar a:visited, #sidebar a:link {
+#sidebar a:link, #sidebar a:visited {
     color: #4682BE;
+    text-decoration: none;
+}
+
+#sidebar a:target {
+    color: #c7254e;
     text-decoration: none;
 }
 
